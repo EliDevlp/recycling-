@@ -1,6 +1,6 @@
-<%= current_user.id %>
+<%= @user.id %>
 
-<%= form_for model: @analyses do |f| %>
+<%= form_with(model: @analyses, local: true) do |f| %>
 
 
   <%= f.label :field1 %>

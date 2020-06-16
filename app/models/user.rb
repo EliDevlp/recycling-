@@ -1,4 +1,4 @@
 class User < ApplicationRecord
   include Clearance::User
-  has_many :analyses
+  has_one :analysis
 end

@@ -5,10 +5,14 @@ class AnalysisController < ApplicationController
     @analysis = @user.analyses.build
   end
 
+  def show
+    @analysis = Analysis.find(params[:id])
+  end
+
   def create
     @analysis = @user.analyses.build(analysis_params)
     if @analysis.save
-      redirect_to new_analysis_path(@user)
+      render('pages/welcome')
     else
       render('pages/welcome')
     end
@@ -16,12 +20,11 @@ class AnalysisController < ApplicationController
 
   def edit
     @analysis = Analysis.find(params[:id])
-
   end
 
   private
   def analysis_params
-    params.require(:analysis).permit(:field1, :field2, :bins_data, :user_id)
+    params.permit(:field1, :field2, :bins_data, :user_id)
   end
 
   def get_user

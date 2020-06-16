@@ -5,7 +5,7 @@
     <div id="navbar">
       <% if signed_in? %>
         <ul class="nav navbar-nav">
-          <li><%= link_to 'Add analysis', new_analysis_path %></li>
+          <li><%= link_to 'Add analysis', user_analysis_new_path(current_user.id) %></li>
         </ul>
       <% end %>
 
