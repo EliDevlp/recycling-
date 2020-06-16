@@ -1,7 +1,17 @@
+<%= current_user.id %>
+
+<%= form_for model: @analyses do |f| %>
 
 
-<%= form_with model: @analyses, class: "nifty_form" do |f| %>
-  <%= f.text_field :title %>
-  <%= f.text_area :body, size: "60x12" %>
-  <%= f.submit "Create" %>
+  <%= f.label :field1 %>
+  <%= f.number_field :field1 %>
+
+  <%= f.label :field2 %>
+  <%= f.number_field :field2%>
+
+  <%= f.label :bins_data %>
+  <%= f.number_field :bins_data %>
+
+  <%= f.submit %>
+
 <% end %>
