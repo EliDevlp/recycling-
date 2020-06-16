@@ -16,8 +16,10 @@ ActiveRecord::Schema.define(version: 2020_06_16_120535) do
     t.integer "field1"
     t.integer "field2"
     t.integer "bins_data"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_analyses_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
